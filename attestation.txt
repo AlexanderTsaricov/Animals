@@ -1,0 +1,393 @@
+Задание 1. Используя команду cat в терминале операционной системы Linux, создать
+два файла Домашние животные (заполнив файл собаками, кошками,
+хомяками) и Вьючные животными заполнив файл Лошадьми, верблюдами и
+ослы), а затем объединить их. Просмотреть содержимое созданного файла.
+Переименовать файл, дав ему новое имя (Друзья человека)
+
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2$ cat >> 'Домашние животные'
+Кошка Мурка
+Кот Филип
+Собака Луна
+Хомяк Антон Эдуардович
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2$ cat 'Домашние животные'
+Кошка Мурка
+Кот Филип
+Собака Луна
+Хомяк Антон Эдуардович
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2$ cat >> 'Вьючные животные'
+Кобыла Мира
+Мерин Люк
+Жеребец Петька
+Осёл Петр Петрович
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2$ cat 'Вьючные животные'
+Кобыла Мира
+Мерин Люк
+Жеребец Петька
+Осёл Петр Петрович
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2$ cat 'Домашние животные' 'Вьючные животные' >> 'Животинки'
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2$ cat 'Животинки' 
+Кошка Мурка
+Кот Филип
+Собака Луна
+Хомяк Антон Эдуардович
+Кобыла Мира
+Мерин Люк
+Осёл Петр Петрович
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2$ mv 'Животинки' 'Друзья человека'
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2$ ll
+итого 6
+drwxrwxrwx 1 root root  408 окт 10 20:10  ./
+drwxrwxrwx 1 root root  176 окт 10 13:31  ../
+-rwxrwxrwx 1 root root 1090 окт 10 13:34  attestation.txt*
+-rwxrwxrwx 1 root root   75 окт 10 13:43 'Вьючные животные'*
+-rwxrwxrwx 1 root root  105 окт 10 13:32 'Домашние животные'*
+-rwxrwxrwx 1 root root  180 окт 10 20:09 'Друзья человека'*
+
+
+
+
+Задание 2. Создать директорию, переместить файл туда.
+
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2$ mkdir ex_2
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2$ mv 'Друзья человека' ./ex_2/'Друзья человека'
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2$ ls
+ attestation.txt   ex_2  'Вьючные животные'  'Домашние животные'
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2$ cd ex_2/
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2/ex_2$ ls
+'Друзья человека'
+
+3. Подключить дополнительный репозиторий MySQL. Установить любой пакет
+из этого репозитория
+
+>>> У меня уже установлен этот репозиторий, уже я работал с mysql в терминале и собственно, эту аттестацию пишу из ubuntu. Часть дз даже делал из терминала и этой ОС. 
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2/ex_2$ sudo apt install mysql-server
+[sudo] пароль для alexander: 
+Попробуйте ещё раз.
+[sudo] пароль для alexander: 
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Уже установлен пакет mysql-server самой новой версии (8.0.39-0ubuntu0.24.04.2).
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  gir1.2-javascriptcoregtk-4.1 gir1.2-snapd-2 gir1.2-webkit2-4.1 liblua5.3-0 update-notifier-common
+Для их удаления используйте «sudo apt autoremove».
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 34 пакетов не обновлено.
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2/ex_2$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.39-0ubuntu0.24.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> exit
+Bye
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2/ex_2$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.39-0ubuntu0.24.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| Homework_2         |
+| MyDB               |
+| MyTestMyDB         |
+| attestation        |
+| gb                 |
+| homework_10        |
+| information_schema |
+| less_11            |
+| mysql              |
+| performance_schema |
+| seminar_10         |
+| seminar_8          |
+| sys                |
++--------------------+
+13 rows in set (0,22 sec)
+
+mysql> exit
+Bye
+
+
+
+
+
+Задача 4. Установить и удалить deb-пакет с помощью dpkg.
+
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2/ex_2$ sudo dpkg -i /home/alexander/Загрузки/hello_2.10-2_i386.deb
+Выбор ранее не выбранного пакета hello:i386.
+(Чтение базы данных … на данный момент установлено 234585 файлов и каталогов.)
+Подготовка к распаковке …/hello_2.10-2_i386.deb …
+Распаковывается hello:i386 (2.10-2) …
+Настраивается пакет hello:i386 (2.10-2) …
+Обрабатываются триггеры для install-info (7.1-3build2) …
+Обрабатываются триггеры для man-db (2.12.0-4build2) …
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2/ex_2$ sudo dpkg -r hello
+(Чтение базы данных … на данный момент установлено 234635 файлов и каталогов.)
+Удаляется hello:i386 (2.10-2) …
+Обрабатываются триггеры для man-db (2.12.0-4build2) …
+Обрабатываются триггеры для install-info (7.1-3build2) …
+
+
+
+
+
+
+Задача 5. Выложить историю команд в терминале ubuntu
+>>> Всю историю команд выкладывать многовато, поэтому вот с фильтром dpkg
+
+alexander@alexander-ASUS-TUF-Gaming-F17-FX706LI-FX706LI:~/Programming/Attestation_block_2/ex_2$ history | grep dpkg
+ 1312  dpkg -i mysql-community-server_9.0.1-1ubuntu24.04_amd64.deb
+ 1313  sudo dpkg -i mysql-community-server_9.0.1-1ubuntu24.04_amd64.deb
+ 1314  sudo dpkg -i /home/alexander/Загрузки/mysql-server_9.0.1-1ubuntu24.04_amd64.deb-bundle/mysql-community-server_9.0.1-1ubuntu24.04_amd64.deb
+ 1318  sudo dpkg -i /home/alexander/Загрузки/mysql-server_9.0.1-1ubuntu24.04_amd64.deb
+ 1323  sudo dpkg -i /home/alexander/Загрузки/mysql-server_9.0.1-1ubuntu24.04_amd64.deb
+ 1327  sudo dpkg -i /home/alexander/Загрузки/mysql-server_9.0.1-1ubuntu24.04_amd64.deb-bundle/mysql-community-server_9.0.1-1ubuntu24.04_amd64.deb
+ 1334  sudo dpkg -i /home/alexander/Загрузки/mysql-server_9.0.1-1ubuntu24.04_amd64.deb-bundle/mysql-community-server_9.0.1-1ubuntu24.04_amd64.deb
+ 1337  sudo dpkg -i /home/alexander/Загрузки/mysql-server_9.0.1-1ubuntu24.04_amd64.deb-bundle/mysql-community-server_9.0.1-1ubuntu24.04_amd64.deb
+ 1346  sudo dpkg -i /home/alexander/Загрузки/mysql-community-server_9.0.1-1ubuntu24.04_amd64.deb
+ 1355  sudo dpkg -i /home/alexander/Загрузки/mysql-workbench-community_8.0.38-1ubuntu24.04_amd64.deb
+ 1359  sudo dpkg -i /home/alexander/Загрузки/mysql-workbench-community_8.0.38-1ubuntu24.04_amd64.deb
+ 1365  sudo dpkg -r mysql-workbench-community_8.0.38-1ubuntu24.04_amd64.deb
+ 1366  sudo dpkg -r mysql-workbench-community_8.0.38-1ubuntu24.04_amd64
+ 1367  sudo dpkg -r mysql-workbench-community
+ 1387  dpkg -l | grep mysql-server
+ 1388  dpkg -l install mysql-server
+ 1389  dpkg -l install mysql-server-8.0
+ 1889  sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb
+ 2057  dpkg -i
+ 2058  sudo dpkg -i
+ 2059  sudo dpkg 
+ 2060  sudo dpkg --help
+ 2062  sudo dpkg -i hello_2.10-2+b1_amd64.deb
+ 2066  sudo dpkg -i hello_2.10-2_i386.deb
+ 2067  sudo dpkg -i /home/alexander/Загрузки/hello_2.10-2_i386.deb
+ 2068  sudo dpkg -r hello
+ 2070  history | grep dpkg
+
+Задача 6. Нарисовать диаграмму, в которой есть класс родительский класс, домашние
+животные и вьючные животные, в составы которых в случае домашних
+животных войдут классы: собаки, кошки, хомяки, а в класс вьючные животные
+войдут: Лошади, верблюды и ослы).
+
+>>> Выполнено в файле Animals.dia
+
+Задача 7. В подключенном MySQL репозитории создать базу данных “Друзья
+человека”
+
+mysql> create database ДрузьяЧеловека;
+Query OK, 1 row affected (0,20 sec)
+
+
+Задача 8. Создать таблицы с иерархией из диаграммы в БД
+mysql> use ДрузьяЧеловека
+Database changed
+
+
+mysql> create table Animals (animals_id int auto_increment primary key, name varchar(45), sex varchar(45), birthday date, command varchar(45), type varchar(45), category varchar(45));
+Query OK, 0 rows affected (1,35 sec)
+
+mysql> create table HomeAnimals (homeAnimals_id int auto_increment primary key, name varchar(45), sex varchar(45), birthday date, command varchar(45), type varchar(45));
+Query OK, 0 rows affected (3,81 sec)
+
+mysql> create table PackAnimals (packAnimals_id int auto_increment primary key, name varchar(45), sex varchar(45), birthday date, command varchar(45), type varchar(45));
+Query OK, 0 rows affected (2,82 sec)
+
+mysql> create table Cats (cat_id int auto_increment primary key, name varchar(45), sex varchar(45), birthday date, command varchar(45));
+Query OK, 0 rows affected (3,47 sec)
+
+mysql> create table Dogs (dog_id int auto_increment primary key, name varchar(45), sex varchar(45), birthday date, command varchar(45));
+Query OK, 0 rows affected (3,00 sec)
+
+mysql> create table Hamsters (hamster_id int auto_increment primary key, name varchar(45), sex varchar(45), birthday date, command varchar(45));
+Query OK, 0 rows affected (3,37 sec)
+
+mysql> create table Horses (horse_id int auto_increment primary key, name varchar(45), sex varchar(45), birthday date, command varchar(45));
+Query OK, 0 rows affected (3,34 sec)
+
+mysql> create table Camels (camel_id int auto_increment primary key, name varchar(45), sex varchar(45), birthday date, command varchar(45));
+Query OK, 0 rows affected (3,74 sec)
+
+mysql> create table Donkeys (donkey_id int auto_increment primary key, name varchar(45), sex varchar(45), birthday date, command varchar(45));
+Query OK, 0 rows affected (0,74 sec)
+
+
+
+ 
+ Задача 9. Заполнить низкоуровневые таблицы именами(животных), командами
+которые они выполняют и датами рождения
+
+mysql> insert into Cats (name, sex, birthday, command) values ('Мурка', 'woman', '2020-03-01', 'тыгыдык'), ('Филип', 'male', '2019-05-05', 'кусь');
+Query OK, 2 rows affected (0,11 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into Dogs (name, sex, birthday, command) values 
+    -> ('Луна', 'woman', '2018-01-03', 'укусить за бочек');
+Query OK, 1 row affected (0,75 sec)
+
+mysql> insert into Hamsters (name, sex, birthday, command) values
+    -> ('Антон Эдуардович', 'male', '2023-01-08', 'Написать дисертацию');
+Query OK, 1 row affected (0,29 sec)
+
+mysql> insert into Horses (name, sex, birthday, command) values
+    -> ('Мира', 'woman', '2015-06-08', 'сожрать все сено'),
+    -> ('Люк', 'male', '2015-01-05', 'сбросить всадника');
+Query OK, 2 rows affected (0,20 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into Donkeys (name, sex, birthday, command) values
+    -> ('Петр Петрович', 'male', '2014-03-05', 'потерять хвост');
+Query OK, 1 row affected (0,17 sec)
+
+
+
+Задача 10. Удалив из таблицы верблюдов, т.к. верблюдов решили перевезти в другой
+питомник на зимовку. Объединить таблицы лошади, и ослы в одну таблицу.
+
+mysql> drop table Camels;
+Query OK, 0 rows affected (0,45 sec)
+
+
+mysql> create table HorsesAndDonkeys (id int auto_increment primary key, name varchar(45), sex varchar(45), birthday date, command varchar(45));
+Query OK, 0 rows affected (3,08 sec)
+
+mysql> INSERT INTO HorsesAndDonkeys (name, sex, birthday, command)
+    -> SELECT name, sex, birthday, command FROM Horses
+    -> UNION ALL
+    -> SELECT name, sex, birthday, command FROM Donkeys;
+Query OK, 3 rows affected (0,30 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from HorsesAndDonkeys;
++----+---------------------------+-------+------------+-----------------------------------+
+| id | name                      | sex   | birthday   | command                           |
++----+---------------------------+-------+------------+-----------------------------------+
+|  1 | Мира                      | woman | 2015-06-08 | сожрать все сено                  |
+|  2 | Люк                       | male  | 2015-01-05 | сбросить всадника                 |
+|  3 | Петр Петрович             | male  | 2014-03-05 | потерять хвост                    |
++----+---------------------------+-------+------------+-----------------------------------+
+3 rows in set (0,00 sec)
+
+
+
+
+Задача 11. Создать новую таблицу “молодые животные” в которую попадут все
+животные старше 1 года, но младше 3 лет и в отдельном столбце с точностью
+до месяца подсчитать возраст животных в новой таблице
+
+
+mysql> create table YongAnimals (yongAnimal_id int auto_increment primary key, name varchar(45), sex varchar(45), birthday date, command varchar(45), age int);
+Query OK, 0 rows affected (3,94 sec)
+
+
+mysql> INSERT INTO YongAnimals (name, sex, birthday, command, age)
+    -> SELECT name, sex, birthday, command, 
+    ->        YEAR(CURDATE()) - YEAR(birthday) AS age
+    -> FROM HorsesAndDonkeys
+    -> WHERE YEAR(CURDATE()) - YEAR(birthday) BETWEEN 1 AND 2;
+Query OK, 0 rows affected (0,00 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO YongAnimals (name, sex, birthday, command, age) SELECT name, sex, birthday, command,         YEAR(CURDATE()) - YEAR(birthday) AS age FROM Cats WHERE YEAR(CURDATE())
+- YEAR(birthday) BETWEEN 1 AND 2;
+Query OK, 0 rows affected (0,00 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO YongAnimals (name, sex, birthday, command, age) SELECT name, sex, birthday, command,         YEAR(CURDATE()) - YEAR(birthday) AS age FROM Hamsters WHERE YEAR(CURDATE()) 
+Query OK, 1 row affected (0,14 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO YongAnimals (name, sex, birthday, command, age) SELECT name, sex, birthday, command,         YEAR(CURDATE()) - YEAR(birthday) AS age FROM Dogs WHERE YEAR(CURDATE())
+- YEAR(birthday) BETWEEN 1 AND 2;
+Query OK, 0 rows affected (0,00 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+mysql> select * from YongAnimals;
++---------------+---------------------------------+------+------------+---------------------------------------+------+
+| yongAnimal_id | name                            | sex  | birthday   | command                               | age  |
++---------------+---------------------------------+------+------------+---------------------------------------+------+
+|             1 | Антон Эдуардович                | male | 2023-01-08 | Написать дисертацию                   |    1 |
++---------------+---------------------------------+------+------------+---------------------------------------+------+
+1 row in set (0,00 sec)
+
+
+
+
+
+mysql> ALTER TABLE Animals 
+    -> ADD COLUMN cat_id INT,
+    -> ADD COLUMN dog_id INT,
+    -> ADD COLUMN hamster_id INT,
+    -> ADD COLUMN horse_id INT,
+    -> ADD COLUMN donkey_id INT;
+Query OK, 0 rows affected (0,64 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+>>> Вставка данных из Cats
+INSERT INTO Animals (name, sex, birthday, command, type, category, cat_id)
+SELECT c.name, c.sex, c.birthday, c.command, 'Cat' AS type, 'Home' AS category, c.cat_id
+FROM Cats c;
+
+>>> Вставка данных из Dogs
+INSERT INTO Animals (name, sex, birthday, command, type, category, dog_id)
+SELECT d.name, d.sex, d.birthday, d.command, 'Dog' AS type, 'Home' AS category, d.dog_id
+FROM Dogs d;
+
+>>> Вставка данных из Hamsters
+INSERT INTO Animals (name, sex, birthday, command, type, category, hamster_id)
+SELECT h.name, h.sex, h.birthday, h.command, 'Hamster' AS type, 'Home' AS category, h.hamster_id
+FROM Hamsters h;
+
+>>> Вставка данных из Horses
+INSERT INTO Animals (name, sex, birthday, command, type, category, horse_id)
+SELECT h.name, h.sex, h.birthday, h.command, 'Horse' AS type, 'Pack' AS category, h.horse_id
+FROM Horses h;
+
+>>> Вставка данных из Donkeys
+INSERT INTO Animals (name, sex, birthday, command, type, category, donkey_id)
+SELECT d.name, d.sex, d.birthday, d.command, 'Donkey' AS type, 'Pack' AS category, d.donkey_id
+FROM Donkeys d;
+
+mysql> SELECT * FROM Animals
+    -> ;
++------------+---------------------------------+-------+------------+---------------------------------------+---------+----------+--------+--------+------------+----------+-----------+
+| animals_id | name                            | sex   | birthday   | command                               | type    | category | cat_id | dog_id | hamster_id | horse_id | donkey_id |
++------------+---------------------------------+-------+------------+---------------------------------------+---------+----------+--------+--------+------------+----------+-----------+
+|          1 | Мурка                           | woman | 2020-03-01 | тыгыдык                               | Cat     | Home     |      1 |   NULL |       NULL |     NULL |      NULL |
+|          2 | Филип                           | male  | 2019-05-05 | кусь                                  | Cat     | Home     |      2 |   NULL |       NULL |     NULL |      NULL |
+|          4 | Луна                            | woman | 2018-01-03 | укусить за бочек                      | Dog     | Home     |   NULL |      1 |       NULL |     NULL |      NULL |
+|          5 | Антон Эдуардович                | male  | 2023-01-08 | Написать дисертацию                   | Hamster | Home     |   NULL |   NULL |          1 |     NULL |      NULL |
+|          6 | Мира                            | woman | 2015-06-08 | сожрать все сено                      | Horse   | Pack     |   NULL |   NULL |       NULL |        1 |      NULL |
+|          7 | Люк                             | male  | 2015-01-05 | сбросить всадника                     | Horse   | Pack     |   NULL |   NULL |       NULL |        2 |      NULL |
+|          9 | Петр Петрович                   | male  | 2014-03-05 | потерять хвост                        | Donkey  | Pack     |   NULL |   NULL |       NULL |     NULL |         1 |
++------------+---------------------------------+-------+------------+---------------------------------------+---------+----------+--------+--------+------------+----------+-----------+
+7 rows in set (0,00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
