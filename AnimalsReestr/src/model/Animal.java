@@ -42,6 +42,10 @@ public class Animal {
         return command.toString();
     }
 
+    public ArrayList<String> getListcommand() {
+        return command;
+    }
+
     public void addCommand (String command) {
         this.command.add(command);
     }

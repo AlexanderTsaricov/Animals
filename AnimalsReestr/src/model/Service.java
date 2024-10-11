@@ -18,14 +18,14 @@ public class Service {
         this.counter = new CounterAnimals();
     }
 
-    public void addHomeAnimal(String name, String dateStr, Sex sex, String command, String voice, CategoryHomeAnimal category){
+    public void addAnimal(String name, String dateStr, Sex sex, String command, String voice, CategoryHomeAnimal category){
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             Date date = (Date) formatter.parse(dateStr);
             System.out.println("Преобразованная дата: " + date);
             animalReestr.addHomeAnimal(name, date, sex, command, voice, counter, category);
     }
 
-    public void addPackAnimal(String name, String dateStr, Sex sex, String command, String bag, CategoryPackAnimal category){
+    public void addAnimal(String name, String dateStr, Sex sex, String command, String bag, CategoryPackAnimal category){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         Date date = (Date) formatter.parse(dateStr);
         System.out.println("Преобразованная дата: " + date);
@@ -42,6 +42,10 @@ public class Service {
 
     public String showAllComand (int numberAnimal) {
         return animalReestr.animalCollection.get(numberAnimal-1).getCommand();
+    }
+
+    public String extendAnimalCommand (int numberAnimal, int numberCommand) {
+        return animalReestr.animalCollection.get(numberAnimal-1).getListcommand().get(numberCommand);
     }
 
 }
