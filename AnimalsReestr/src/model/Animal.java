@@ -1,13 +1,15 @@
 package model;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Animal {
     private String name;
     private Date birthday;
     private Sex sex;
-    private String command;
+    private ArrayList<String> command;
     /*
     * Я бы лучше оставил один этот класс и просто добавил сюда тип и категорию, но так как
     * по заданию нужно реализовать наследование по диаграмме, сделаю как в задании
@@ -16,7 +18,7 @@ public class Animal {
         this.name = name;
         this.birthday = birthday;
         this.sex = sex;
-        this.command = command;
+        this.command.add(command);
         try {
             reestr.add();
         } catch (IOException e) {
@@ -37,6 +39,11 @@ public class Animal {
     }
 
     public String getCommand() {
-        return command;
+        return command.toString();
     }
+
+    public void addCommand (String command) {
+        this.command.add(command);
+    }
+
 }
