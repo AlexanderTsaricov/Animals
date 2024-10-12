@@ -8,7 +8,7 @@ public class Saving implements SaveAndLoad {
     @Override
     public void save(AnimalReestr obj) throws IOException {
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-                new FileOutputStream("src/Service/ModulsService/save/save.json"));
+                new FileOutputStream("src/model/saveReestr/save.json"));
         objectOutputStream.writeObject(obj);
         objectOutputStream.close();
 

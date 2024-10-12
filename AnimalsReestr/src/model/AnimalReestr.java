@@ -3,24 +3,20 @@ package model;
 import model.enumPack.CategoryHomeAnimal;
 import model.enumPack.CategoryPackAnimal;
 import model.enumPack.Sex;
-import model.homeAnimals.Cat;
-import model.homeAnimals.Dog;
-import model.homeAnimals.Hamster;
-import model.packAnimal.Camel;
-import model.packAnimal.Donkey;
-import model.packAnimal.Horse;
 import model.saveReestr.Saving;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class AnimalReestr {
+public class AnimalReestr implements Serializable {
     ArrayList<Animal> animalCollection;
-    public AnimalReestr() throws IOException {
+    CounterAnimals counterAnimals = new CounterAnimals();
+    AnimalReestr() throws IOException {
         this.animalCollection = new ArrayList<>();
     }
-    public void addHomeAnimal (
+    void addHomeAnimal (
         String name,
         Date birthday,
         Sex sex,
@@ -39,8 +35,9 @@ public class AnimalReestr {
                 animalCollection.add(new Hamster(name, birthday, sex,command, this, counter, voise));
                 break;
         }
+        counterAnimals.add();
     }
-    public void addPackAnimal (
+    void addPackAnimal (
        String name,
        Date birthday,
        Sex sex,
@@ -60,8 +57,9 @@ public class AnimalReestr {
                 animalCollection.add(new Camel(name, birthday, sex, command, this, counter, bag));
                 break;
         }
+        counterAnimals.add();
     }
-    public void save() {
+    void save() {
         try {
             Saving save = new Saving();
             save.save(this);
@@ -69,7 +67,7 @@ public class AnimalReestr {
             System.out.println(e.getMessage() + "Реестр не сохранен");
         }
     }
-    public AnimalReestr load() throws IOException {
+    AnimalReestr load() throws IOException {
         try {
             Saving load = new Saving();
             return load.load();
@@ -80,5 +78,8 @@ public class AnimalReestr {
             System.out.println(e.getMessage());
             return new AnimalReestr();
         }
+    }
+    int getCounterAnimals() {
+        return counterAnimals.getCount();
     }
 }
