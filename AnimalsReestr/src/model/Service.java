@@ -6,6 +6,7 @@ import model.enumPack.Sex;
 
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Service {
@@ -23,6 +24,7 @@ public class Service {
             Date date = (Date) formatter.parse(dateStr);
             System.out.println("Преобразованная дата: " + date);
             animalReestr.addHomeAnimal(name, date, sex, command, voice, counter, category);
+            animalReestr.save();
     }
 
     public void addAnimal(String name, String dateStr, Sex sex, String command, String bag, CategoryPackAnimal category){
@@ -30,22 +32,24 @@ public class Service {
         Date date = (Date) formatter.parse(dateStr);
         System.out.println("Преобразованная дата: " + date);
         animalReestr.addPackAnimal(name, date, sex, command, counter, bag, category);
+        animalReestr.save();
     }
 
     public void addCommandToAnimal (String comand, int numberAnimal) {
         animalReestr.animalCollection.get(numberAnimal-1).addCommand(comand);
+        animalReestr.save();
     }
 
-    public String showAllAnimal () {
-        return animalReestr.animalCollection.toString();
+    public ArrayList<Animal> showAllAnimal () {
+        return animalReestr.animalCollection;
     }
 
-    public String showAllComand (int numberAnimal) {
-        return animalReestr.animalCollection.get(numberAnimal-1).getCommand();
+    public ArrayList<String> showAllComand (int numberAnimal) {
+        ArrayList<String> listCommand = animalReestr.animalCollection.get(numberAnimal-1).getListcommand();
+        return listCommand;
     }
 
     public String extendAnimalCommand (int numberAnimal, int numberCommand) {
         return animalReestr.animalCollection.get(numberAnimal-1).getListcommand().get(numberCommand);
     }
-
 }
